@@ -4,12 +4,13 @@ import java.util.Arrays;
 
 public abstract class Vector<T> implements List<T>{
 
-	T[] vector = (T[]) new Object[0];
+	private T[] vector = (T[]) new Object[0];
 	long size = 0;
 	
 	// add(value)
 	
-	public void add(T element) {
+	public synchronized void add(T element) {
+		
 		T[] arr = (T[]) new Object[vector.length+1];
 		for(int i = 0; i < vector.length; i++) {
 			arr[i] = vector[i];
@@ -21,7 +22,7 @@ public abstract class Vector<T> implements List<T>{
 
 	// add(index, value)
 	
-	public void add(int index, T element) {
+	public synchronized void add(int index, T element) {
 		try {
 		T[] arr;
 		if(index > -1 && index < vector.length) {
@@ -51,7 +52,7 @@ public abstract class Vector<T> implements List<T>{
 	
 	// contains(value)
 	
-	public boolean contains(T element) {
+	public synchronized boolean contains(T element) {
 		for(int i = 0; i < vector.length; i++) {
 			if(String.valueOf(vector[i]).equals(String.valueOf(element))) {
 				return true;
@@ -62,19 +63,19 @@ public abstract class Vector<T> implements List<T>{
 	
 	// firstElement()
 	
-	public T firstElement() {
+	public synchronized T firstElement() {
 		return vector[0];
 	}
 	
 	// lastElement()
 	
-	public T lastElement() {
+	public synchronized T lastElement() {
 		return vector[vector.length-1];
 	}
 	
 	// indexOf(value)
 	
-	public int indexOf(T element) {
+	public synchronized int indexOf(T element) {
 		for(int i = 0; i < vector.length; i++) {
 			if(String.valueOf(vector[i]).equals(String.valueOf(element))) {
 				return i;
@@ -85,7 +86,7 @@ public abstract class Vector<T> implements List<T>{
 	
 	// isEmpty()
 	
-	public boolean isEmpty() {
+	public synchronized boolean isEmpty() {
 		if(vector.length > 0) {
 			return false;
 		}
@@ -94,7 +95,7 @@ public abstract class Vector<T> implements List<T>{
 	
 	// lastIndexOf(value)
 	
-	public int lastIndexOf(T element) {
+	public synchronized int lastIndexOf(T element) {
 		int index = -1;
 		for(int i = 0; i < vector.length; i++) {
 			if(String.valueOf(vector[i]).equals(String.valueOf(element))) {
@@ -106,7 +107,7 @@ public abstract class Vector<T> implements List<T>{
 	
 	// remove(index)
 	
-	public void remove(int index) {
+	public synchronized void remove(int index) {
 		try {
 		T[] arr = (T[]) new Object[vector.length-1];
 		if(index > -1 && index < vector.length) {
@@ -132,7 +133,7 @@ public abstract class Vector<T> implements List<T>{
 	
 	// remove(value)
 	
-	public void remove(T element) {
+	public synchronized void remove(T element) {
 		int index = -1;
 		for(int i = 0; i < vector.length; i++) {
 			if(String.valueOf(vector[i]).equals(String.valueOf(element))) {
@@ -145,7 +146,7 @@ public abstract class Vector<T> implements List<T>{
 	
 	// get(index)
 	
-	public T get(int index) {
+	public synchronized T get(int index) {
 		try {
 		if(index < vector.length) {
 			return vector[index];
@@ -162,7 +163,7 @@ public abstract class Vector<T> implements List<T>{
 	
 	// set(index, value)
 	
-	public void set(int index, T element) {
+	public synchronized void set(int index, T element) {
 		try {
 		if(index > -1 && index < vector.length) {
 		for(int i = 0; i < vector.length; i++) {
@@ -182,13 +183,13 @@ public abstract class Vector<T> implements List<T>{
 	
 	// size()
 	
-	public int size() {
+	public synchronized int size() {
 		return (int)size;
 	}
 	
 	// toString()
 	
-	public String toString() {
+	public synchronized String toString() {
 		StringBuffer string = new StringBuffer();
 		
 		for(int i = 0; i < vector.length-1; i++) {
