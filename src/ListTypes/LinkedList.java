@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class LinkedList<T> implements List<T> {
 
-	public  T[] linkedList;
-	long size = 0;
+	private  T[] linkedList;
+	private long size = 0;
 	
 	public LinkedList() {
 		linkedList = (T[]) new Object[10];
