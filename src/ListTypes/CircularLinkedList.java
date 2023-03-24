@@ -1,7 +1,7 @@
 package ListTypes;
 
 public abstract class CircularLinkedList<T> implements List{
-	int lengthOfLinkedList = 0;
+	private int lengthOfLinkedList = 0;
 	private Node head;
 	
 	public void insertNode(T value) {
@@ -107,6 +107,67 @@ public abstract class CircularLinkedList<T> implements List{
 		}
 		string = string.append(currentNode.data);
 		return string.toString();
+	}
+	
+	
+	@Override
+	public void add(Object value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void add(int index, Object value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(int index) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void remove(Object element) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Object get(int index) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void set(int index, Object value) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public int indexOf(Object value) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int lastIndexOf(Object value) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean contains(Object value) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
 
