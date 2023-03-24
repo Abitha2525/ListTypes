@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class ArrayList<T> implements List<T>{
 
-	public  T[] arrayList;
-	long size = 0;
+	private  T[] arrayList;
+	private long size = 0;
 	
 	public ArrayList() {
 		arrayList = (T[]) new Object[10];
