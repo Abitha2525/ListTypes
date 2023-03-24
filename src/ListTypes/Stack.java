@@ -2,7 +2,7 @@ package ListTypes;
 
 public abstract class Stack<T> extends Vector<T>{
 
-	T[] stack = (T[]) new Object[0];
+	private T[] stack = (T[]) new Object[0];
 	
 	// empty()
 	
