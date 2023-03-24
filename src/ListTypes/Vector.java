@@ -5,7 +5,7 @@ import java.util.Arrays;
 public abstract class Vector<T> implements List<T>{
 
 	private T[] vector = (T[]) new Object[0];
-	long size = 0;
+	private long size = 0;
 	
 	// add(value)
 	
